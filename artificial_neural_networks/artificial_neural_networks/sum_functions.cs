@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace artificial_neural_networks
 {
-    interface activation_functions
+    interface sum_functions
     {
-       double sigmoid(int x);
+        double I_normal_toplama(string toplama_fonk, int parametre_sayisi);
     }
 }

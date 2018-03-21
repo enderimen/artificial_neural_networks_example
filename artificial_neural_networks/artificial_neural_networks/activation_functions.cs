@@ -8,6 +8,7 @@ namespace artificial_neural_networks
 {
     interface activation_functions
     {
-        double sigmoid(string x);
+        double sigmoid();
+        double hyperbolic();
     }
 }

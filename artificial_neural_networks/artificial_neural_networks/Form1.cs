@@ -30,20 +30,29 @@ namespace artificial_neural_networks
 
             data1.setGirdiler(parametre_sayisi, (int)alt, (int)ust);
 
-            
-            if (data1.I_normal_toplama(toplama_fonk.Text, parametre_sayisi) != 1)
+            // Normal Toplama Fonksiyonu
+            if (data1.secim_toplama(toplama_fonk.Text, parametre_sayisi) != 1)
             {
-                label6.Text += data1.I_normal_toplama(toplama_fonk.Text, parametre_sayisi);
+                label6.Text = "Toplama fonk. sonucu: " + data1.secim_toplama(toplama_fonk.Text, parametre_sayisi);
             }
             else
             {
-                Console.Beep();
-                MessageBox.Show("Toplama işlemi tanımlanamadı.");
-                label6.Text += 0;
+                label6.Text = "Toplama fonk. sonucu: İşlem tanımlanamadı";
             }
 
 
-            label7.Text += data1.sigmoid(aktivasyon_fonk.Text);
+            //Çarpım sembolü kullanarak toplma işlemi
+            if (data1.secim_toplama(toplama_fonk.Text, parametre_sayisi) != 1)
+            {
+                label6.Text = "Toplama fonk. sonucu: " + data1.secim_toplama(toplama_fonk.Text, parametre_sayisi);
+            }
+            else
+            {
+                label6.Text = "Toplama fonk. sonucu: İşlem tanımlanamadı";
+            }
+
+
+            label7.Text = "Aktivasyon fonk. sonucu: " + data1.secim_aktivasyon(aktivasyon_fonk.Text);
 
             double[,] gelen_girdiler = data1.getGirdiler();
 
@@ -58,7 +67,7 @@ namespace artificial_neural_networks
         {
             listBox1.Items.Clear();
             listBox2.Items.Clear();
-            if (parametre_sayisi.Text != null && ust_sinir.Value != 0 && alt_sinir.Value != 0 && toplama_fonk.Text != ""  && aktivasyon_fonk.Text != "")
+            if (parametre_sayisi.Text != "0" && ust_sinir.Value != 0 && alt_sinir.Value != 0 && toplama_fonk.Text != ""  && aktivasyon_fonk.Text != "")
             {
                 if (alt_sinir.Value < ust_sinir.Value)
                 {
@@ -69,6 +78,26 @@ namespace artificial_neural_networks
                     MessageBox.Show("Alt sınır üst sınırdan büyük olamaz");
                 }
             }            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            temizle();
+        }
+
+        void temizle()
+        {
+            parametre_sayisi.Clear();
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
+            ust_sinir.Value = 0;
+            alt_sinir.Value = 0;
+
+            toplama_fonk.Text = "";
+            aktivasyon_fonk.Text = "";
+
+            label6.Text = "Toplama fonk. sonucu: ";
+            label7.Text = "Aktivasyon fonk. sonucu: ";
         }
     }
 }

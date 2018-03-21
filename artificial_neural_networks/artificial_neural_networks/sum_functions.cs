@@ -9,5 +9,6 @@ namespace artificial_neural_networks
     interface sum_functions
     {
         double I_normal_toplama(string toplama_fonk, int parametre_sayisi);
+        double I_carpma(string carpma_fonk, int parametre_sayisi);
     }
 }

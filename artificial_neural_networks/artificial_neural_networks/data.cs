@@ -11,7 +11,9 @@ namespace artificial_neural_networks
         private int agirlik;
         private double[,] girdiler;
 
+
         double toplam = 0.0;
+
         Random agirlik_uret = new Random();
         Random bagimsiz_degiskenler = new Random();  
 
@@ -53,51 +55,92 @@ namespace artificial_neural_networks
             return girdiler;
         }
 
-        // sigmoid metodu :interface
-        public double sigmoid(string activation_function)
+        //Toplama işlemleri. için seçim fonk.
+        public double secim_toplama(string toplama_fonk, int parametre_sayisi)
         {
-            double F = 0.0;
-            switch (activation_function)
+            double islem_sonucu = 0.0;
+
+            switch (toplama_fonk)
             {
-                case "Sigmoid":
-
-                    double ust_ifade = Math.Pow(Math.E, -toplam);
-                    F = 1 / (1 + ust_ifade);
-
+                case "∑":
+                    islem_sonucu = I_normal_toplama(toplama_fonk, parametre_sayisi);                    
+                    break;
+                case "Π":
+                    islem_sonucu = I_carpma(toplama_fonk , parametre_sayisi);
                     break;
                 default:
                     break;
             }
-            return F;
+            return islem_sonucu;
         }
 
+        //Aktivasyon işlemleri. için seçim fonk.
+        public double secim_aktivasyon(string aktivasyon_fonk)
+        {
+            double islem_sonucu = 0.0;
+
+            switch (aktivasyon_fonk)
+            {
+                case "Sigmoid":
+                    islem_sonucu = sigmoid();
+                    break;
+                case "Hyperbolic":
+                    islem_sonucu = hyperbolic();
+                    break;
+                default:
+                    break;
+            }
+            return islem_sonucu;
+        } 
+
+        #region aktivasyon fonksiyonları
+        public double sigmoid()
+        {
+            double S = 0.0;
+
+            double ust_ifade = Math.Pow(Math.E, -toplam);
+            
+            S = 1 / (1 + ust_ifade);
+
+            return S;
+        }
+
+        public double hyperbolic()
+        {
+            double H = 0.0;
+
+            double ust_ifade = Math.Pow(Math.E , - (2 * toplam));
+            double alt_ifade = Math.Pow(Math.E , + (2 * toplam));
+
+            H = (1 - ust_ifade) / (1 + alt_ifade);
+
+            return H;
+        }
+        #endregion
 
         // normal toplama metodu :interface
         public double I_normal_toplama(string toplama_fonk, int parametre_sayisi)
         {
-            bool error = false;
-            switch (toplama_fonk)
+            toplam = 0.0;
+
+            for (int j = 0; j < parametre_sayisi; j++)
             {
-                case "∑":
-
-                    for (int j = 0; j < parametre_sayisi; j++)
-                    {
-                        toplam += girdiler[j, 0] * girdiler[j, 1];
-                    }
-                    break;
-                case "a":
-                    error = true;
-
-                    //MessageBox.Show("İşlem tanımlanmadı");
-                    break;
-                default:
-                    break;
+                toplam += girdiler[j, 0] * girdiler[j, 1];
             }
 
-            if (error==true)
+            return toplam;
+        }
+
+        // carparak toplam fonk hesaplama
+        public double I_carpma(string carpma_fonk, int parametre_sayisi)
+        {
+            toplam = 1.0;
+
+            for (int j = 0; j < parametre_sayisi; j++)
             {
-                return 1;
+                toplam *= girdiler[j, 0] * girdiler[j, 1];
             }
+
             return toplam;
         }
     }

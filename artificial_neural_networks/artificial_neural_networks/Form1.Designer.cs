@@ -45,6 +45,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.alt_sinir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ust_sinir)).BeginInit();
             this.SuspendLayout();
@@ -88,7 +89,7 @@
             this.alt_sinir.Location = new System.Drawing.Point(84, 84);
             this.alt_sinir.Name = "alt_sinir";
             this.alt_sinir.Size = new System.Drawing.Size(55, 20);
-            this.alt_sinir.TabIndex = 2;
+            this.alt_sinir.TabIndex = 1;
             // 
             // ust_sinir
             // 
@@ -103,8 +104,8 @@
             this.toplama_fonk.FormattingEnabled = true;
             this.toplama_fonk.Items.AddRange(new object[] {
             "∑",
-            "a"});
-            this.toplama_fonk.Location = new System.Drawing.Point(222, 42);
+            "Π"});
+            this.toplama_fonk.Location = new System.Drawing.Point(238, 43);
             this.toplama_fonk.Name = "toplama_fonk";
             this.toplama_fonk.Size = new System.Drawing.Size(121, 21);
             this.toplama_fonk.TabIndex = 3;
@@ -112,7 +113,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(219, 26);
+            this.label4.Location = new System.Drawing.Point(235, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 13);
             this.label4.TabIndex = 1;
@@ -121,7 +122,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(219, 93);
+            this.label5.Location = new System.Drawing.Point(235, 94);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(126, 13);
             this.label5.TabIndex = 1;
@@ -132,18 +133,19 @@
             this.aktivasyon_fonk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.aktivasyon_fonk.FormattingEnabled = true;
             this.aktivasyon_fonk.Items.AddRange(new object[] {
-            "Sigmoid"});
-            this.aktivasyon_fonk.Location = new System.Drawing.Point(222, 109);
+            "Sigmoid",
+            "Hyperbolic"});
+            this.aktivasyon_fonk.Location = new System.Drawing.Point(238, 110);
             this.aktivasyon_fonk.Name = "aktivasyon_fonk";
             this.aktivasyon_fonk.Size = new System.Drawing.Size(121, 21);
-            this.aktivasyon_fonk.TabIndex = 3;
+            this.aktivasyon_fonk.TabIndex = 4;
             // 
             // hesapla_buton
             // 
             this.hesapla_buton.Location = new System.Drawing.Point(372, 298);
             this.hesapla_buton.Name = "hesapla_buton";
             this.hesapla_buton.Size = new System.Drawing.Size(123, 40);
-            this.hesapla_buton.TabIndex = 4;
+            this.hesapla_buton.TabIndex = 5;
             this.hesapla_buton.Text = "Hesapla";
             this.hesapla_buton.UseVisualStyleBackColor = true;
             this.hesapla_buton.Click += new System.EventHandler(this.hesapla_buton_Click);
@@ -161,13 +163,13 @@
             this.listBox2.FormattingEnabled = true;
             this.listBox2.Location = new System.Drawing.Point(94, 165);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(105, 173);
+            this.listBox2.Size = new System.Drawing.Size(122, 173);
             this.listBox2.TabIndex = 7;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(219, 209);
+            this.label6.Location = new System.Drawing.Point(235, 210);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(119, 13);
             this.label6.TabIndex = 8;
@@ -176,7 +178,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(219, 256);
+            this.label7.Location = new System.Drawing.Point(235, 257);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(127, 13);
             this.label7.TabIndex = 8;
@@ -200,11 +202,22 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "Ağırlık Değerleri";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(238, 298);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 40);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Temizle";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 350);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -253,6 +266,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button1;
     }
 }
 

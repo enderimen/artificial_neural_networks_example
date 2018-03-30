@@ -1,0 +1,6 @@
+C:\Users\Acer E1 571G\Desktop\artificial_neural_networks_example\yazılımSınama\yazılımSınama\bin\Debug\yazılımSınama.exe.config
+C:\Users\Acer E1 571G\Desktop\artificial_neural_networks_example\yazılımSınama\yazılımSınama\bin\Debug\yazılımSınama.exe
+C:\Users\Acer E1 571G\Desktop\artificial_neural_networks_example\yazılımSınama\yazılımSınama\bin\Debug\yazılımSınama.pdb
+C:\Users\Acer E1 571G\Desktop\artificial_neural_networks_example\yazılımSınama\yazılımSınama\obj\Debug\yazılımSınama.csprojResolveAssemblyReference.cache
+C:\Users\Acer E1 571G\Desktop\artificial_neural_networks_example\yazılımSınama\yazılımSınama\obj\Debug\yazılımSınama.exe
+C:\Users\Acer E1 571G\Desktop\artificial_neural_networks_example\yazılımSınama\yazılımSınama\obj\Debug\yazılımSınama.pdb
